@@ -1,0 +1,412 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{Spring 2022 CS4641/CS7641 A Homework 1}
+\author{Dr. Mahdi Roozbahani}
+\date{Deadline: Feb 10, Thursday, 11:59 pm AOE}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{bbold}
+\usepackage{diagbox}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Sharelatex Example},
+    bookmarks=true,
+    pdfpagemode=FullScreen,
+}
+\begin{document}
+\maketitle
+\begin{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    YOUR NAME\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \bigskip
+\end{center}
+\begin{itemize}
+    \item No unapproved extension of the deadline is allowed. Late submission will lead to 0 credit.
+    \item Discussion is encouraged, but each student must write their own answers and explicitly mention any collaborators.
+    \item \color{red}Plagiarism is a \textbf{serious offense}. You are responsible for completing your own work. You are not allowed to copy and paste, or paraphrase, or submit materials created or published by others, as if you created the materials. All materials submitted must be your own.\color{black}
+    \item \color{red}All incidents of suspected dishonesty, plagiarism, or violations of the Georgia Tech Honor Code will be subject to the institute’s Academic Integrity procedures. If we observe any (even small) similarities/plagiarisms detected by Gradescope or our TAs, \textbf{WE WILL DIRECTLY REPORT ALL CASES TO OSI}, which may, unfortunately, lead to a very harsh outcome. \textbf{Consequences can be severe, e.g., academic probation or dismissal, grade penalties, a 0 grade for assignments concerned, and prohibition from withdrawing from the class}.
+\end{itemize}
+\section*{Instructions}
+\begin{itemize}
+    \item This assignment has no programming, only written questions.
+    \item We will be using Gradescope for submission and grading of assignments. 
+    \item Unless a question explicitly states that no work is required to be shown, you must provide an explanation, justification, or calculation for your answer.
+    \item Your write up must be submitted in PDF form, you may use either Latex,  markdown, or any word processing software. \color{red}We will \textbf{NOT} accept handwritten work. \color{black}Make sure that your work is formatted correctly, for example submit $\sum_{i=0} x_i$ instead of \text{sum\_\{i=0\} x\_i}. A useful guide on LaTeX is provided in \href{https://edstem.org/us/courses/16925/discussion/995658}{this Edstem post}.
+    \item Please answer each question on a new page. It makes it more organized to map your answers on GradeScope. When submitting your assignment, you must correctly map pages of your PDF to each question/subquestion to reflect where they appear. Improperly mapped questions may not be graded correctly.
+    \item Discussion is encouraged on Edstem as part of the Q/A. You may discuss high-level ideas with other students at the "whiteboard" level (e.g. how cross validation works, using matmul instead of dot) and review any relevant materials online. However, all assignments should be done individually, each student must write up and submit their own answers.
+    \item \textbf{Graduate Students}: You are required to complete any sections marked as Bonus for Undergrads
+\end{itemize}
+\newpage
+\section*{Point Distribution}
+\subsection*{Q1: Linear Algebra [43pts]}
+\begin{itemize}
+    \item 1.1 Determinant and Inverse of a Matrix [15pts]
+    \item 1.2 Characteristic Equation [8pts]
+    \item 1.3 Eigenvalues and Eigenvectors [20pts]
+\end{itemize}
+\subsection*{Q2: Covariance, Correlation, and Independence [9pts]}
+\begin{itemize}
+    \item 2.1 Covariance [5pts]
+    \item 2.2 Correlation [4pts]
+\end{itemize}
+\subsection*{Q3: Optimization [15pts]}
+\subsection*{Q4: Maximum Likelihood [25pts]}
+\begin{itemize}
+    \item 4.1 Discrete Example [10pts]
+    \item 4.2 Poisson Distribution [15pts: Bonus for Undergrads]
+\end{itemize}
+\subsection*{Q5: Information Theory [35pts]}
+\begin{itemize}
+    \item 5.1 Marginal Distribution [6pts]
+    \item 5.2 Mutual Information and Entropy [19pts]
+    \item 5.3 Entropy Proofs [10pts]
+\end{itemize}
+\subsection*{Q6: Bonus for All [15pts]}
+\newpage
+\section{Linear Algebra [15pts + 8pts + 20pts]}
+\subsection{Determinant and Inverse of Matrix [15pts]}
+Given a matrix $M$:
+$$M = \begin{bmatrix} 
+  2 & r & 2 \\ 
+  1 & -2 & -3 \\
+  5 & 0 & r
+  \end{bmatrix}$$
+\begin{enumerate}[label=(\alph*)]
+\item Calculate the determinant of $M$ in terms of $r$. (Calculation process is required) [4pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item For what value(s) of $r$ does $M^{-1}$ not exist? Why? What does it mean in terms of rank and singularity for these values of $r$? [3pts] \bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Will all values of $r$ found in part b allow for a row (or a column) to be expressed as a linear combination of the other rows (or columns) respectively? If yes, provide one example, if no, explain why. [3pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Write down $M^{-1}$ for $r = 0$. (Calculation process is \textbf{NOT} required.) [2pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find the determinant of $M^{-1}$ for $r = 0$. What is the relationship between the determinant of $M$ and the determinant of $M^{-1}$? [3pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+\subsection{Characteristic Equation [8pts]}
+Consider the eigenvalue problem: 
+$$Ax =\lambda x, x \neq 0$$
+where $x$ is a non-zero eigenvector and $\lambda$ is an eigenvalue of $A$. Prove that the determinant $|A-\lambda I|= 0$.\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\subsection{Eigenvalues and Eigenvectors [5pts + 5pts + 10pts]}
+\subsubsection{Eigenvalues [5pts]}
+Given a matrix A:
+$$\textbf{\textit{A}}=\begin{bmatrix}
+    a & b \\
+    b & c
+    \end{bmatrix}$$
+\begin{enumerate}[label=(\alph*)]
+\item Find an expression for the eigenvalues ($\lambda$) of $\textbf{\textit{A}}$ in the terms given. [4pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find a simple expression for the eigenvalues if $c= a$. Under what conditions are all $\lambda>0$? [1pt]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+    
+\subsubsection{Eigenvectors [5pts]}
+A symmetric matrix $\textbf{\textit{A}}\in \mathbb{R}^{N\times N}$ can be decomposed as
+$$\boldsymbol{A}=\boldsymbol{V} \boldsymbol{\Lambda } \boldsymbol{V}^T=\sum_{n=1}^N \lambda_n \boldsymbol{v}_n \boldsymbol{v}_n^T$$
+Where $\boldsymbol{V}$ is a matrix whose columns are the eigenvectors of $\boldsymbol{A}$, $\boldsymbol{v}_n$ are the columns of $\boldsymbol{V}$ and $\boldsymbol{\Lambda}$ is a diagonal matrix whose elements are the eigenvalues of $\boldsymbol{A}$. The eigenvectors are orthonormal to each other, i.e., $\boldsymbol{v}_i^T\boldsymbol{v}_j=\left\{
+\begin{matrix}
+1, i=j \\
+0, i\neq j
+\end{matrix}
+\right.$.
+\begin{enumerate}[label=(\alph*)]
+\item Show that $\text{trace}(\boldsymbol{A})=\sum_{n=1}^N \lambda_n$ [3pts]\\
+\textbf{NOTE:} $\boldsymbol{v}_i^T\boldsymbol{v}_j\neq \boldsymbol{v}_i\boldsymbol{v}_j^T$\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item What is the result of the multiplication $\boldsymbol{V}^T \boldsymbol{V}$? Show your work or present an argument. [2pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+\subsubsection{Eigenvalue and Eigenvector Calculations [10pts]}
+Given a matrix
+$$\boldsymbol{A} = \begin{bmatrix} 
+  x & 5  \\ 
+  5 & x \\
+  \end{bmatrix}$$
+\begin{enumerate}[label=(\alph*)]
+\item Calculate the eigenvalues of $\boldsymbol{A}$ as a function of $x$. (Calculation process is required). [3pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find the normalized eigenvectors of matrix $\boldsymbol{A}$. (Calculation process is required). [7pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+
+
+\section{Covariance, Correlation, and Independence [5pts + 4pts]}
+\subsection{Covariance [5pts]}
+Suppose $X, Y$ and $Z$ are three different random variables.
+Let $X$ obey a Bernoulli Distribution. The probability distribution function is
+    $$p(x)=\left\{
+    \begin{array}{c l}	
+         0.5 & x = c\\
+         0.5 & x = -c.
+    \end{array}\right.$$
+$c$ is a constant here. Let $Y$ obey the Standard Normal (Gaussian) Distribution, which can be written as $Y \sim N(0,1)$. $X$ and $Y$ are independent. Meanwhile, let $Z = XY$.
+\newline
+\newline
+Calculate the covariance of Y and Z ($Cov(Y, Z)$) and determine whether values of c would affect the correlation.\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection{Correlation Coefficient [4pts]}
+Let X and Y be independent random variables with $var(X) = 4$ and $var(Y ) = 12$. We do
+not know $E[X]$ or $E[Y]$. Let $Z = 3X + Y$ . What is the correlation coefficient $\rho(X,Z)=\frac{cov(X,Z)}{\sqrt{var(X)var(Z)}}$?\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+
+\section{Optimization [15pts]}
+Optimization problems are related to minimizing a function (usually termed loss, cost or error function) or maximizing a function (such as the likelihood) with respect to some variable x. The Karush-Kuhn-Tucker (KKT) conditions are first-order conditions for a solution in nonlinear programming to be optimal, provided that some regularity conditions are satisfied. In this question, you will be solving the following optimization problem:
+\begin{align*}
+    \min_{x,y} \;\;& f(x,y) = 7x^{2} + 4y \\
+    \text{s.t.} \;\;& g_{1}(x,y) = x^{2}+y^{2}\leq 2 \\
+    & g_{2}(x,y) = x \leq 1
+\end{align*}
+\textbf{HINT 1:} Click \href{https://www.youtube.com/watch?v=TqN-8fxYUYY}{here} for a maximization example. \\
+\textbf{HINT 2:} Click \href{https://en.wikipedia.org/wiki/Karush-Kuhn-Tucker_conditions#Nonlinear_optimization_problem}{here} to determine how to set up the problem for minimization in parts (a) and (b).\\
+\begin{enumerate}[label=(\alph*)]
+\item Specify the Lagrange function [2pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item List the equations for the KKT conditions  [2pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Solve for 4 possibilities formed by each constraint being active or inactive  [5pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item List the candidate point(s) (there may be 0, 1, 2, or 4 candidate points)  [4pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find the \textbf{one} candidate point for which f(x,y) is smallest. Check if L(x,y) is concave or convex at this point by using the \href{https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian}{Hessian} in the \href{https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test}{second partial derivative test}.  [2pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+
+
+\section{Maximum Likelihood [10pts + 15pts Bonus for Undergrads]}
+\subsection{Discrete Example [10pts]}
+Devshree and Angana are arguing over where they should go for winter break. Devshree’s argument is that they should go to Boston because Megha, their childhood friend, lives there and thus they will get to have a good time. Angana’s argument is that they should go to Florida because Florida is very near to Atlanta, it has the mildest winter and on the other hand, Boston’s weather is very rough during the winter.\\\\To resolve this conflict, their other friend Yusuf makes a proposition that they should leave it to chance to decide where they should spend their winter break. Devshree then proposes that Angana will toss a 6-sided die 10 times, and Angana must get anything except 2 during the first 9 times and must get 2 during the 10th time. Any other combination will make Devshree the winner. But Angana is also allowed to tamper with the die in any manner she likes to increase her odds.\\\\Now, Angana needs you to help her have her way. If the probability of getting a 2 is $\theta$ and the probabilities of landing on any other number is the same, what value of $\theta$ is most likely to ensure that they will have to go to Florida? Use your expertise of Maximum Likelihood Estimation and probability distribution function to convince Angana.\\\\\textbf{NOTE: }You may assume that the log-likelihood function is concave for this question\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\subsection{Poisson distribution [15pts Bonus for Undergrads]}
+The Poisson distribution is defined as 
+$$P(X=k)=\frac{\lambda^k e^{-\lambda}}{k!} \text{ for } (k=0,1,2,...).$$
+\begin{enumerate}[label=(\alph*)]
+\item Assume that we have one observed data $x_1$, and $X_1 \sim Poisson(\lambda)$. What is the likelihood if $ \lambda$ is given? [2 pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Now, assume that we are given $n$ such values $(x_1,...,x_n)$, $(X_1, ...,X_n)\sim Poisson(\lambda)$. Here $X_1, ...,X_n$ are i.i.d. random variables. What is the likelihood of this data given $\lambda$? [3 pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item What is the maximum likelihood estimator of $\lambda$? [10 pts] \\
+\textbf{NOTE: }You may assume that the log-likelihood function is concave for this question\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+
+
+\section{Information Theory [6pts + 19pts + 10pts]}
+\subsection{Marginal Distribution [6pts]}
+Suppose the joint probability distribution of two binary random variables $X$ and $Y$ are given as follows. X are the rows, and Y are the columns.
+$$\renewcommand*{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline 
+\diagbox{X}{Y} & {0} & {1} \\ 
+\hline 0 & {$\frac{1}{8}$} & {$\frac{3}{8}$} \\ 
+\hline 1 & {0} & {$\frac{1}{2}$} \\ 
+\hline
+\end{tabular}$$
+\begin{enumerate}[label=(\alph*)]
+\item Show the marginal distribution of $X$ and $Y$, respectively. [3pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find mutual information for the joint probability distribution in the previous question [3pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+\subsection{Mutual Information and Entropy [19pts]}
+Given a dataset as below.
+$$\begin{array}{|c|c|c|c|c|c|}\hline Sr.No. & Age & Immunity & Travelled? & Underlying Conditions & Self-quarantine? \\ \hline 1 & young & high & no & yes & yes \\ \hline 2 & young & high & no & no & no \\ \hline 3 & middle aged & high & no & yes & yes \\ \hline 4 & senior & medium & no & yes & yes \\ \hline 5 & senior & low & yes & yes & yes \\ \hline 6 & senior & low & yes & no & no \\ \hline 7 & middle aged & low & yes & no & yes\\ \hline 8 & young & medium & no & yes & no\\ \hline 9 & young & low & yes & yes & no\\ \hline 10 & senior & medium & yes & yes & yes\\ \hline 11 & young & medium & yes & no & yes \\ \hline 12 & middle aged & medium & no & no & yes \\ \hline 13 & middle aged & high & yes & yes & yes \\ \hline 14 & senior & medium & no & no & no \\\hline\end{array}$$
+We want to decide whether an individual working in an essential services industry should be allowed to work or self-quarantine. Each input has four features ($x_1$, $x_2$, $x_3$, $x_4$): Age, Immunity, Travelled, Underlying Conditions. The decision (quarantine vs does not quarantine) is represented as $Y$.
+\begin{enumerate}[label=(\alph*)]
+\item Find entropy $H(Y)$ to at least 3 decimal places. [3pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find conditional entropy $H(Y|x_1)$, $H(Y|x_3)$, respectively, to at least 3 decimal places. [8pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find mutual information $I(x_1, Y)$ and $I(x_3, Y)$ and determine which one ($x_1$ or $x_3$) is more informative. [4pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Find joint entropy $H(Y, x_2)$ to at least 3 decimal places. [4pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+\subsection{Entropy Proofs [10pts]}
+\begin{enumerate}[label=(\alph*)]
+\item Write the mathematical definition for $H(X|Y)$ and $H(X)$. [3pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Using the mathematical definition of $H(X)$ and $H(X|Y)$, prove that $H(X|Y) = H(X)$ if $X$ and $Y$ are independent. (Note: you have to prove it and cannot use the visualization shown in class \href{https://mahdi-roozbahani.github.io/CS46417641-spring2022/other/CEandMI_Illustration.jpg}{found here} [7pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+
+
+\section{Bonus for All [15pts]}
+\begin{enumerate}[label=(\alph*)]
+\item If a random variable X has a Poisson distribution with mean 5, then calculate the expectation E[${(2X-3)^{2}}$] [5 pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item Suppose that $X$ and $Y$ have joint pdf given by [5 pts]
+$$f_{X,Y}(x,y)=\left\{
+\begin{aligned}
+&2e^{-2y}, & 0\leq x\leq1,y\geq0 \\
+&0, & otherwise\\
+\end{aligned}
+\right.$$
+What are the marginal probability density functions for $X$ and  $Y$?\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item A person decides to toss a biased coin with $P(heads)=0.4$ repeatedly until he gets a head. He will make at most 3 tosses. Let the random variable Y denote the number of heads. Find the variance of Y. [5 pts]\bigskip \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Solution:}\\
+YOUR ANSWER HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{enumerate}
+
+\end{document}
